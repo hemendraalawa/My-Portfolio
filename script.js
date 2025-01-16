@@ -11,7 +11,7 @@
 
     try {
       // Send form data to the backend
-      const response = await fetch("https://my-portfolio-backend-rfbf.onrender.com/contact", {
+      const response = await fetch("https://my-portfolio-backend-rfbf.onrender.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
