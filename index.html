@@ -103,12 +103,14 @@
         <section id="contact" class="section">
             <h2>Contact Me</h2>
             <div class="contact">
-                <form id="contactForm">
-                  <input type="text" name="name" placeholder="Your Name" required>
-                  <input type="email" name="email" placeholder="Your Email" required>
-                  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                  <button type="submit" id="submitBtn">Send Message</button>
-                </form>
+              <form id="contactForm">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit" id="submitBtn">Send Message</button>
+  <p id="loadingText" style="display: none;">Sending...</p> <!-- ✅ Added -->
+</form>
+
               </div>   
         </section>
 
