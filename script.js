@@ -1,6 +1,9 @@
+document.getElementById("contactForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-  document.getElementById("contactForm").addEventListener("submit", async (event) => {
-    event.preventDefault(); // Prevent the default form submission
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.disabled = true; // Disable button to prevent multiple clicks
+    submitBtn.innerText = "Sending...";
 
     // Collect form data
     const formData = {
@@ -10,7 +13,6 @@
     };
 
     try {
-      // Send form data to the backend
       const response = await fetch("https://my-portfolio-backend-rfbf.onrender.com/contact", {
         method: "POST",
         headers: {
@@ -20,10 +22,15 @@
       });
 
       const result = await response.json();
-      alert(result.message); // Show success message from backend
+      alert(result.message);
+
+      // Reset form fields
+      document.getElementById("contactForm").reset();
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to send the message. Please try again later.");
+    } finally {
+      submitBtn.disabled = false; // Re-enable button
+      submitBtn.innerText = "Send Message";
     }
   });
-
